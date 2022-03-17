@@ -1,0 +1,496 @@
+$adamd-color: #fbb710;
+$text-color: #131212;
+$text-grey: #6d6d6d;
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+@mixin flex(
+  $align: flex-start,
+  $justify: flex-start,
+  $wrap: nowrap,
+  $dir: row
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+  flex-direction: $dir;
+}
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.wrapper__adamd-product {
+  display: flex;
+  flex-wrap: wrap;
+}
+.header {
+  .navbar {
+    width: 320px;
+    max-width: 320px;
+    background-color: #fff;
+    padding: 0 75px;
+    &__close {
+      display: none;
+    }
+  }
+  &__logo {
+    .logo-adamd {
+      padding-top: 60px;
+      margin-bottom: 90px;
+    }
+  }
+  &__menu {
+    &-item {
+      padding: 20px 0;
+      position: relative;
+      &:hover,
+      &:focus {
+        a {
+          &::after {
+            left: -75px;
+          }
+          color: $adamd-color;
+        }
+      }
+    }
+    &-link {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bold;
+      line-height: 0.9;
+      color: $text-color;
+      transition: all 0.5s ease;
+      &.ative::after {
+        left: -75px;
+      }
+      &::after {
+        content: "";
+        transition-duration: 500ms;
+        width: 30px;
+        height: 3px;
+        position: absolute;
+        top: 50%;
+        margin-top: -1.5px;
+        left: -150px;
+        background-color: $adamd-color;
+        z-index: 10;
+      }
+    }
+    &-buttons {
+      margin-bottom: 85px;
+      @include flex(center, center, wrap, column);
+      .btn {
+        font-size: 18px;
+        width: 165px;
+        text-align: center;
+        background-color: $text-color;
+        color: #fff;
+        padding: 20px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        &.btn--change {
+          background-color: $adamd-color;
+          transition: all 0.5s ease;
+          &:hover {
+            background-color: $text-color;
+          }
+        }
+      }
+    }
+    &-list {
+      margin-bottom: 65px;
+      .social {
+        display: flex;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: $text-color;
+        padding: 15px 0;
+        transition: all 0.5s ease;
+        img {
+          margin-right: 15px;
+        }
+        span {
+          color: rgb(129, 126, 126);
+        }
+        &:hover {
+          color: $adamd-color;
+        }
+      }
+    }
+    &-icon {
+      margin-bottom: 85px;
+      @include flex(flex-start, space-between);
+      font-size: 18px;
+      color: #b5b5b5;
+      transition: all 0.5s ease;
+      i:hover {
+        color: $adamd-color;
+      }
+    }
+  }
+}
+.category {
+  width: calc(100% - 320px);
+  .navbar__mobi {
+    display: none;
+  }
+  &__list {
+    display: flex;
+  }
+  &__group {
+    max-width: 33.333333%;
+    flex: 33.333333%;
+  }
+  &__product {
+    position: relative;
+    &-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-left: 40px;
+      transition: all 0.5s;
+      &:hover {
+        background-color: rgba(60, 60, 60, 0.7);
+        p,
+        h3 {
+          color: #fff;
+        }
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        color: #fbb710;
+        padding: 0 40px;
+        top: 40px;
+        z-index: 12;
+        border-top: 3px solid;
+      }
+      & p {
+        margin-top: 55px;
+        color: $text-grey;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 5px;
+      }
+      & h3 {
+        color: $text-color;
+        font-size: 24px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.container {
+  padding: 100px 120px;
+}
+.subscribe__adamd {
+  background-color: #3c3c3c;
+  .subscribe {
+    display: flex;
+    &__text {
+      width: 60%;
+      & h2 {
+        font-size: 36px;
+        margin-bottom: 10px;
+        color: #fff;
+        font-weight: 600;
+      }
+      & span {
+        color: $adamd-color;
+      }
+      & p {
+        color: #b3b1b1;
+        line-height: 1.5;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+    &__form {
+      width: 40%;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      padding-left: 50px;
+    }
+    &__input {
+      border: none;
+      height: 50px;
+      width: 100%;
+      padding: 0 30px;
+      color: #afafaf;
+      font-size: 14px;
+      font-style: italic;
+      font-weight: 400;
+    }
+    &__button {
+      height: 50px;
+      border: none;
+      font-size: 15px;
+      color: #fff;
+      background-color: $adamd-color;
+      font-weight: bold;
+      width: 40%;
+      cursor: pointer;
+    }
+  }
+}
+.footer {
+  background-color: #252525;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 30%;
+    & p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    &-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-item {
+      margin-left: 50px;
+    }
+    &-link {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #fff;
+      transition: all 0.5s;
+      &.active {
+        color: $adamd-color;
+      }
+      &:hover,
+      &:focus {
+        color: $adamd-color;
+      }
+    }
+  }
+}
+.scrollUp {
+  &__up {
+    position: fixed;
+    background-color: $adamd-color;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 24px;
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 30%);
+    bottom: 60px;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: all 0.4s;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+@media screen and (max-width: 1199px) {
+  .category {
+    &__list {
+      flex-wrap: wrap;
+    }
+    &__group {
+      max-width: 50%;
+      flex-basis: 50%;
+      &:nth-child(3) {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        & .category__product {
+          flex-basis: 50%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 989px) {
+  .category {
+    &__group {
+      max-width: 100%;
+      flex-basis: 100%;
+      &:nth-child(3) {
+        & .category__product {
+          flex-basis: 100%;
+        }
+      }
+      & .category__product {
+        max-width: 100%;
+        background-color: #fbb710;
+        & a img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .subscribe__adamd {
+    .subscribe {
+      flex-direction: column;
+      &__text {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      &__form {
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+  }
+  .footer {
+    &__item {
+      width: 100%;
+    }
+    &__menu {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .wrapper__adamd-product {
+    flex-direction: column;
+  }
+  .header {
+    margin-left: -320px;
+    position: relative;
+    .navbar {
+      position: fixed;
+      z-index: 150;
+      overflow: hidden;
+      overflow: scroll;
+      height: 100%;
+      top: 0;
+      animation: closeNavbar 1s;
+      animation-direction: alternate;
+      &.active {
+        margin-left: 320px;
+        animation: openNavbar 1s;
+        animation-direction: alternate;
+      }
+      @keyframes openNavbar {
+        from {
+          margin-left: -320px;
+        }
+        to {
+          margin-left: 320px;
+        }
+      }
+      @keyframes closeNavbar {
+        from {
+          margin-left: 320px;
+        }
+        to {
+          margin-left: -320px;
+        }
+      }
+      &__close {
+        position: sticky;
+        background-color: $adamd-color;
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        font-size: 24px;
+        @include flex(center, center);
+        left: 130px;
+        top: 0;
+        transition: all 0.5s;
+        &:hover {
+          background-color: #131212;
+          color: $adamd-color;
+        }
+      }
+    }
+  }
+  .category {
+    width: 100%;
+    position: relative;
+    &__list {
+      margin-top: 70px;
+    }
+    &__group {
+      max-width: 50%;
+      flex-basis: 50%;
+      &:nth-child(3) {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        & .category__product {
+          flex-basis: 50%;
+        }
+      }
+    }
+    & .navbar__mobi {
+      display: block;
+      top: 0;
+      position: fixed;
+      @include flex(center, space-between);
+      background-color: #fff;
+      z-index: 33;
+      height: 70px;
+      width: 100%;
+      padding: 20px 30px;
+      box-shadow: 0 4px 15px 0 rgb(0 0 0 / 15%);
+      &-logo {
+        .logo-adamd {
+          width: 70px;
+          height: 30px;
+        }
+      }
+      &-toggler {
+        cursor: pointer;
+        span {
+          background-color: $adamd-color;
+          width: 30px;
+          height: 3px;
+          display: block;
+          margin-bottom: 5px;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+  .subscribe,
+  .footer {
+    position: relative;
+  }
+}

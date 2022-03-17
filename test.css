@@ -1,0 +1,11 @@
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.category__product {
+  width: 33.33%;
+}
+img {
+  width: 100%;
+}
