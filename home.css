@@ -1,0 +1,141 @@
+.category {
+  width: calc(100% - 320px);
+}
+.category .navbar__mobi {
+  display: none;
+}
+.category__list {
+  display: flex;
+}
+.category__group {
+  max-width: 33.333333%;
+  flex: 33.333333%;
+}
+.category__product {
+  position: relative;
+}
+.category__product-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 40px;
+  transition: all 0.5s;
+}
+.category__product-text:hover {
+  background-color: rgba(60, 60, 60, 0.7);
+}
+.category__product-text:hover p,
+.category__product-text:hover h3 {
+  color: #fff;
+}
+.category__product-text::before {
+  position: absolute;
+  content: "";
+  color: #fbb710;
+  padding: 0 40px;
+  top: 40px;
+  z-index: 12;
+  border-top: 3px solid;
+}
+.category__product-text p {
+  margin-top: 55px;
+  color: #6d6d6d;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.category__product-text h3 {
+  color: #131212;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1199px) {
+  .category__list {
+    flex-wrap: wrap;
+  }
+  .category__group {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .category__group:nth-child(3) {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .category__group:nth-child(3) .category__product {
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 989px) {
+  .category__group {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .category__group:nth-child(3) .category__product {
+    flex-basis: 100%;
+  }
+  .category__group .category__product {
+    max-width: 100%;
+    background-color: #fbb710;
+  }
+  .category__group .category__product a img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 769px) {
+  .category {
+    width: 100%;
+    position: relative;
+  }
+  .category__list {
+    margin-top: 70px;
+  }
+  .category__group {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .category__group:nth-child(3) {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .category__group:nth-child(3) .category__product {
+    flex-basis: 50%;
+  }
+  .category .navbar__mobi {
+    display: block;
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    background-color: #fff;
+    z-index: 33;
+    height: 70px;
+    width: 100%;
+    padding: 20px 30px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+  .category .navbar__mobi-logo .logo-adamd {
+    width: 70px;
+    height: 30px;
+  }
+  .category .navbar__mobi-toggler {
+    cursor: pointer;
+  }
+  .category .navbar__mobi-toggler span {
+    background-color: #fbb710;
+    width: 30px;
+    height: 3px;
+    display: block;
+    margin-bottom: 5px;
+    border-radius: 2px;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

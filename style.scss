@@ -65,6 +65,9 @@ body {
     }
   }
   &__menu {
+    &-list {
+      margin-bottom: 35px;
+    }
     &-item {
       padding: 20px 0;
       position: relative;
@@ -122,8 +125,8 @@ body {
         }
       }
     }
-    &-list {
-      margin-bottom: 65px;
+    &-list-iconr {
+      margin-bottom: 100px;
       .social {
         display: flex;
         text-transform: uppercase;
@@ -143,66 +146,13 @@ body {
       }
     }
     &-icon {
-      margin-bottom: 85px;
+      margin-bottom: 80px;
       @include flex(flex-start, space-between);
       font-size: 18px;
       color: #b5b5b5;
       transition: all 0.5s ease;
       i:hover {
         color: $adamd-color;
-      }
-    }
-  }
-}
-.category {
-  width: calc(100% - 320px);
-  .navbar__mobi {
-    display: none;
-  }
-  &__list {
-    display: flex;
-  }
-  &__group {
-    max-width: 33.333333%;
-    flex: 33.333333%;
-  }
-  &__product {
-    position: relative;
-    &-text {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      padding-left: 40px;
-      transition: all 0.5s;
-      &:hover {
-        background-color: rgba(60, 60, 60, 0.7);
-        p,
-        h3 {
-          color: #fff;
-        }
-      }
-      &::before {
-        position: absolute;
-        content: "";
-        color: #fbb710;
-        padding: 0 40px;
-        top: 40px;
-        z-index: 12;
-        border-top: 3px solid;
-      }
-      & p {
-        margin-top: 55px;
-        color: $text-grey;
-        font-size: 16px;
-        font-weight: 400;
-        margin-bottom: 5px;
-      }
-      & h3 {
-        color: $text-color;
-        font-size: 24px;
-        font-weight: 400;
       }
     }
   }
@@ -305,6 +255,7 @@ body {
 }
 .scrollUp {
   &__up {
+    border: 0;
     position: fixed;
     background-color: $adamd-color;
     width: 40px;
@@ -327,43 +278,8 @@ body {
   }
 }
 @media screen and (max-width: 1199px) {
-  .category {
-    &__list {
-      flex-wrap: wrap;
-    }
-    &__group {
-      max-width: 50%;
-      flex-basis: 50%;
-      &:nth-child(3) {
-        max-width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        & .category__product {
-          flex-basis: 50%;
-        }
-      }
-    }
-  }
 }
 @media screen and (max-width: 989px) {
-  .category {
-    &__group {
-      max-width: 100%;
-      flex-basis: 100%;
-      &:nth-child(3) {
-        & .category__product {
-          flex-basis: 100%;
-        }
-      }
-      & .category__product {
-        max-width: 100%;
-        background-color: #fbb710;
-        & a img {
-          width: 100%;
-        }
-      }
-    }
-  }
   .subscribe__adamd {
     .subscribe {
       flex-direction: column;
@@ -437,54 +353,6 @@ body {
         &:hover {
           background-color: #131212;
           color: $adamd-color;
-        }
-      }
-    }
-  }
-  .category {
-    width: 100%;
-    position: relative;
-    &__list {
-      margin-top: 70px;
-    }
-    &__group {
-      max-width: 50%;
-      flex-basis: 50%;
-      &:nth-child(3) {
-        max-width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        & .category__product {
-          flex-basis: 50%;
-        }
-      }
-    }
-    & .navbar__mobi {
-      display: block;
-      top: 0;
-      position: fixed;
-      @include flex(center, space-between);
-      background-color: #fff;
-      z-index: 33;
-      height: 70px;
-      width: 100%;
-      padding: 20px 30px;
-      box-shadow: 0 4px 15px 0 rgb(0 0 0 / 15%);
-      &-logo {
-        .logo-adamd {
-          width: 70px;
-          height: 30px;
-        }
-      }
-      &-toggler {
-        cursor: pointer;
-        span {
-          background-color: $adamd-color;
-          width: 30px;
-          height: 3px;
-          display: block;
-          margin-bottom: 5px;
-          border-radius: 2px;
         }
       }
     }
